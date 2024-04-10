@@ -2,7 +2,6 @@
 // Polymorphism is typically achieved through method overriding,
 
 //Method Overriding:
-
 // class Animal {
 //     speak() {
 //       console.log('Animal makes a sound.');
