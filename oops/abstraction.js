@@ -1,8 +1,9 @@
 // // Abstraction in JavaScript involves hiding the implementation details of an object
 
-// //Using Functions:
+// Using Functions:
 
 // Abstraction through encapsulation
+
 function Counter() {
     let count = 0;
 
