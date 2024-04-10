@@ -13,7 +13,7 @@ function Animal(name) {
   Animal.prototype.speak = function() {
     console.log(this.name + ' makes a sound.');
   };
-  
+
   // Child constructor function
   function Dog(name, breed) {
     Animal.call(this, name); // Call parent constructor
