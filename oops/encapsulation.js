@@ -1,6 +1,33 @@
 // Encapsulation involves bundling data (variables) and methods (functions)
 
 
+function Person(name, age) {
+    let _name = name; // private variable
+    let _age = age; // private variable
+
+    this.getName = function() {
+        return _name;
+    };
+
+    this.getAge = function() {
+        return _age;
+    };
+
+    this.setAge = function(newAge) {
+        if (typeof newAge === 'number' && newAge > 0) {
+            _age = newAge;
+        } else {
+            console.error('Age must be a positive number.');
+        }
+    };
+}
+
+const person1 = new Person('syam', 30);
+console.log(person1.getName()); // Output: "syam"
+console.log(person1.getAge()); // Output: 30
+person1.setAge(35);
+console.log(person1.getAge()); // Output: 35
+
 // function Counter() {
 //     let count = 0;
     
@@ -18,35 +45,35 @@
 //   console.log(counter.getCount()); 
   
 
-const counter = (function () {
-    let privateCounter = 0;
-    function changeBy(val) {
-      privateCounter += val;
-    }
+// const counter = (function () {
+//     let privateCounter = 0;
+//     function changeBy(val) {
+//       privateCounter += val;
+//     }
   
-    return {
-      increment() {
-        changeBy(1);
-      },
+//     return {
+//       increment() {
+//         changeBy(1);
+//       },
   
-      decrement() {
-        changeBy(-1);
-      },
+//       decrement() {
+//         changeBy(-1);
+//       },
   
-      value() {
-        return privateCounter;
-      },
-    };
-  })();
+//       value() {
+//         return privateCounter;
+//       },
+//     };
+//   })();
   
-  console.log(counter.value()); // 0.
+//   console.log(counter.value()); // 0.
   
-  counter.increment();
-  counter.increment();
-  console.log(counter.value()); // 2.
+//   counter.increment();
+//   counter.increment();
+//   console.log(counter.value()); // 2.
   
-  counter.decrement();
-  console.log(counter.value()); // 1.
+//   counter.decrement();
+//   console.log(counter.value()); // 1.
   
 
 // Using Constructor Functions:
@@ -70,24 +97,24 @@ const counter = (function () {
   
 
 
-class Person {
-    #name; 
-    #age;  
+// class Person {
+//     #name; 
+//     #age;  
   
-    constructor(name, age) {
-      this.#name = name;
-      this.#age = age;
-    }
+//     constructor(name, age) {
+//       this.#name = name;
+//       this.#age = age;
+//     }
   
-    getName() {
-      return this.#name;
-    }
+//     getName() {
+//       return this.#name;
+//     }
   
-    getAge() {
-      return this.#age;
-    }
-  }
+//     getAge() {
+//       return this.#age;
+//     }
+//   }
   
-  const person = new Person('syam', 30);
-  console.log(person.getName()); 
-  console.log(person.getAge());
+//   const person = new Person('syam', 30);
+//   console.log(person.getName()); 
+//   console.log(person.getAge());
