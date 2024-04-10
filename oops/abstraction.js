@@ -1,47 +1,47 @@
-// Abstraction in JavaScript involves hiding the implementation details of an object
+// // Abstraction in JavaScript involves hiding the implementation details of an object
 
-//Using Functions:
+// //Using Functions:
 
-function calculateTotalPrice(items) {
-    let total = 0;
-    items.forEach(item => {
-      total += item.price;
-    });
-    return total;
+// Abstraction through encapsulation
+function Counter() {
+    let count = 0;
+
+    this.increment = function() {
+        count++;
+    };
+
+    this.getCount = function() {
+        return count;
+    };
 }
-  
 
-// Using Objects:
+const myCounter = new Counter();
+myCounter.increment();
+console.log(myCounter.getCount()); // Output: 1
 
-const car = {
-    make: 'Toyota',
-    model: 'Corolla',
-    year: 2020,
-    drive() {
-      console.log('The car is driving.');
-    }
-};
-  
+// Abstraction through module pattern
+const calculator = (function() {
+    let result = 0;
 
-//Using Classes
-    class Circle {
-        constructor(radius) {
-            this.radius = radius;
-        }
-        
-        getArea() {
-            return Math.PI * this.radius * this.radius;
-        }
+    function add(num) {
+        result += num;
     }
 
-  
-// Using Modules:
-
-    // math.js
-    export function add(a, b) {
-        return a + b;
+    function subtract(num) {
+        result -= num;
     }
-    
-    // main.js
-    import { add } from './math.js';
-    console.log(add(2, 3));
+
+    function getResult() {
+        return result;
+    }
+
+    return {
+        add,
+        subtract,
+        getResult
+    };
+})();
+
+calculator.add(5);
+calculator.subtract(2);
+console.log(calculator.getResult()); // Output: 3
