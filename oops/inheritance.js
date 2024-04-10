@@ -3,7 +3,8 @@
 // Prototype Chaining:
 
 //Constructor Function Inheritance:
-//Parent constructor function
+
+// Parent constructor function
 function Animal(name) {
     this.name = name;
   }
