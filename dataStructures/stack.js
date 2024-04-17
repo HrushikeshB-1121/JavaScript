@@ -1,46 +1,57 @@
+/* Stack:
+        last in first out;
+    ex: 
+        undo redo opertations;
+        books kept one after one;
+*/
+
+
 class Stackk{
     constructor(){
         this.length = 0;
-        this.arr = {};
+        this.obj = {};
     }
 
+    //add elements to first
     pushh(value){
         for(let x=this.length-1;x>=0;x--){
-            this.arr[x+1] = this.arr[x];
+            this.obj[x+1] = this.obj[x];
         }
-        this.arr[0] = value;
+        this.obj[0] = value;
         this.length++;
     }
 
+    //removes last added element
     popp(){
         if(this.length===0){
-            return "array is empty";
+            return "objay is empty";
         }
-        let lastNum = this.arr[0];
+        let lastNum = this.obj[0];
         for(let x=0;x<this.length-1;x++){
-            this.arr[x] = this.arr[x+1];
+            this.obj[x] = this.obj[x+1];
         }
-        delete this.arr[--this.length];
+        delete this.obj[--this.length];
         return lastNum;
     }
 
+    //displays lastadded element
     peekk(){
         if(this.length===0){
-            return "array is empty";
+            return "objay is empty";
         }
-        return this.arr[0];
+        return this.obj[0];
     }
 
 }
 
-let arr1 = new Stackk();
-arr1.pushh(10);
-arr1.pushh(20);
-arr1.pushh(30);
-arr1.pushh(40);
-arr1.pushh(50);
-console.log(Object.values(arr1.arr),arr1.length);
-arr1.popp();
-console.log(Object.values(arr1.arr),arr1.length);
-let x = arr1.peekk()
+let stack = new Stackk();
+stack.pushh(10);
+stack.pushh(20);
+stack.pushh(30);
+stack.pushh(40);
+stack.pushh(50);
+console.log(Object.values(stack.obj),stack.length);
+stack.popp();
+console.log(Object.values(stack.obj),stack.length);
+let x = stack.peekk()
 console.log(x);
