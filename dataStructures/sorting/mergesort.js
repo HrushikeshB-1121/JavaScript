@@ -20,8 +20,6 @@ function mergeSort(arr){
 
 //sorting the left array with right array with comapring each element of the array
 function merge(left,right){
-    console.log("left"+left);
-    console.log("right"+right);
     let result = [];
     let leftIndx = 0;
     let rightIndx = 0;
