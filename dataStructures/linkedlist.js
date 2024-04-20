@@ -63,10 +63,9 @@ class LinkedList{
         for(let x=0;x<indx-1;x++){
             curr = curr.next;
         }
-        let nxtNode = curr.next;
         let newNode = new Node(data);
+        newNode.next = curr.next;
         curr.next = newNode;
-        newNode.next = nxtNode;
         this.size++;
     }
 
