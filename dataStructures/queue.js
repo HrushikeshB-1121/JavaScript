@@ -13,11 +13,6 @@ class Queue{
 
     //adds elements at last 
     enqueue(value){
-        if(this.length===0){
-            this.obj[0] = value;
-            this.length++;
-            return;
-        }
         this.obj[this.length++]=value;
     }
 
